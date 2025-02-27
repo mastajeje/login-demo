@@ -1,4 +1,4 @@
-import { Button, Form, Input } from "antd";
+import { Button, Form, FormProps, Input } from "antd";
 
 type FieldType = {
     username?: string;
@@ -6,13 +6,29 @@ type FieldType = {
     remember?: boolean; 
 }
 
+
 export default function Login(){
+
+    const onFinish:FormProps<FieldType>['onFinish'] = (values) => {
+        console.log('Received values:', values);
+        fetch('http://localhost:5000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(values)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+    }
+
     return (
         <div>
             <h1>Login Demo Page</h1>
             <Form
                 name="login"
                 style={{width:600}}
+                onFinish={onFinish}
                 // initialValues={{}}
             >
                 <Form.Item<FieldType>
