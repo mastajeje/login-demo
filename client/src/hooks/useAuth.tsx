@@ -5,12 +5,9 @@ import { authAtom } from '../atoms/atom';
 import { useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
+import { LoginResponse } from '../types/Auth.types';
 
-interface LoginResponse {
-    token: string;
-    success: boolean;
-    message: string;
-}
+
 
 export default function useAuth() {
     const [isAuthenticated, setIsAuthenticated] = useAtom(authAtom);

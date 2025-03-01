@@ -1,9 +1,5 @@
 import Cookies from 'js-cookie';
-
-interface User {
-    username: string,
-    password: string,
-}
+import { User } from '../types/Auth.types';
 
 export const loginUser = async (user:User) => {
     const response = await fetch('http://localhost:5000/api/login', {

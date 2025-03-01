@@ -11,12 +11,10 @@ type FieldType = {
 };
 
 export default function Login() {
-  // const [token, setToken] = useAtom(tokenAtom)
   const {login, isAuthenticated} = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('Token:', isAuthenticated);
     if (isAuthenticated) {
       navigate('/');
     }
