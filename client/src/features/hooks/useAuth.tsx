@@ -1,7 +1,7 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
 import {isTokenValid, loginUser} from '../utils/auth';
 import { useAtom } from 'jotai';
-import { authAtom } from '../atoms/atom';
+import { authAtom } from '../../atoms/atom';
 import { useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';

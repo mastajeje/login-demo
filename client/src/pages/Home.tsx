@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../features/hooks/useAuth";
 import { useEffect } from "react";
 import Cookies from 'js-cookie';
 
@@ -29,7 +29,7 @@ export default function Home(){
     useEffect(() => {
         testRequest()
     },[])
-    
+
     return (
         <div>
             <h1>Home Page</h1>

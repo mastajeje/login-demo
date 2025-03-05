@@ -2,7 +2,7 @@ import {Button, Form, FormProps, Input} from 'antd';
 import {useNavigate} from 'react-router-dom';
 import {useEffect} from 'react';
 
-import useAuth from '../hooks/useAuth.tsx';
+import useAuth from '../../hooks/useAuth.tsx';
 
 type FieldType = {
   username?: string;
